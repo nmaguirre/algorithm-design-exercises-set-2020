@@ -11,7 +11,6 @@ package util;
 public enum SortAlgorithm {
 	INSERTIONSORT,
 	SELECTIONSORT,
-	QUICKSORT,
 	MERGESORT,
 	BUBBLESORT
 }

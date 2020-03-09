@@ -79,14 +79,11 @@ public class ArraySorter<E extends Comparable<E>> {
 		case MERGESORT:
 			mergeSort(array); 
 			break;
-		case QUICKSORT:
-			quickSort(array); 
-			break;
 		case SELECTIONSORT:
 			selectionSort(array); 
 			break;
 		default:
-			break;
+            throw new UnsupportedOperationException("sorting method not yet implemented"); 
 		}	
 	}
 
