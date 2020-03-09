@@ -119,15 +119,6 @@ public class ArraySorter<E extends Comparable<E>> {
 	}
 
 	/**
-	 * Sorts an array. Implements the quicksort sort algorithm.
-	 * @param <T> is the type of the elements in the array.
-	 * @param array is the array to be sorted.
-	 */	
-	private static <T extends Comparable<T>> void quickSort(T[] array) {
-		throw new UnsupportedOperationException("method not yet implemented");				
-	}
-
-	/**
 	 * Sorts an array. Implements the mergesort sort algorithm.
 	 * @param <T> is the type of the elements in the array.
 	 * @param array is the array to be sorted.
