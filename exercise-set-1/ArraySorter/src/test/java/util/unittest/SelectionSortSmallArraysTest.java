@@ -88,7 +88,7 @@ public class SelectionSortSmallArraysTest {
 
 		sorter.sort();
 
-		assertArrayEquals(clonedArray, array);
+		assertArrayEquals(Arrays.sort(clonedArray), array);
 	}
 
 

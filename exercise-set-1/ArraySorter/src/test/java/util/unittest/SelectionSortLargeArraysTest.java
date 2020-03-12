@@ -108,7 +108,7 @@ public class SelectionSortLargeArraysTest {
 
 		sorter.sort();
 
-		assertArrayEquals(clonedArray, array);
+		assertArrayEquals(Arrays.sort(clonedArray), array);
 	}
 
 }
