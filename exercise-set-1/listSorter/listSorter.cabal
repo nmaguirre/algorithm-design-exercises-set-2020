@@ -1,0 +1,82 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 410c48ea498900c689fb0df73cef63bdc4a8be0e933f013d9827cc1cb6de0d36
+
+name:           listSorter
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/listSorter#readme>
+homepage:       https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-1/listSorter#readme
+bug-reports:    https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-1/listSorter/issues
+author:         Sonia Permigiani
+maintainer:     spermigiani@dc.exa.unrc.edu.ar
+copyright:      2020 Sonia
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-1/listSorter
+
+library
+  exposed-modules:
+      ListSorter
+  other-modules:
+      Paths_listSorter
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable listSorter-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_listSorter
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , listSorter
+  default-language: Haskell2010
+
+test-suite listSorter-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_listSorter
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , hspec
+    , listSorter
+  default-language: Haskell2010
+
+benchmark listSorter-bench
+  type: exitcode-stdio-1.0
+  main-is: ListSortBench.hs
+  other-modules:
+      Paths_listSorter
+  hs-source-dirs:
+      bench
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , hspec
+    , listSorter
+    , criterion
+    , random
+  default-language: Haskell2010
