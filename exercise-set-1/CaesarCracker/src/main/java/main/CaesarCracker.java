@@ -60,7 +60,7 @@ public class CaesarCracker {
 	/**
 	 * Returns the maximum length to be tried in password cracking. 
 	 * For instance, if such length is 1, then all
-	 * passwords of length 1 (values from 0 to 255) will be tried as passwords for cracking.
+	 * passwords of length 1 (values from 0 to 127) will be tried as passwords for cracking.
 	 * @return the maximum length to be tried for password cracking.
 	 */
 	public int getPasswordLength() {
@@ -119,7 +119,7 @@ public class CaesarCracker {
 	/**
 	 * Encodes message with a given key.
 	 * @param message is the message to be encoded.
-	 * @param key is the key used for encoding, given as an array of integer values (from 0 to 128).
+	 * @param key is the key used for encoding, given as an array of integer values (from 0 to 127).
 	 * @return the message encoded with the provided key.
 	 */
 	public static String encode(String message, int[] key) {
@@ -127,7 +127,7 @@ public class CaesarCracker {
 		int currKeyIndex = 0;
 		String output = "";
 		for (int i = 0; i < message.length();i++) {
-			if (key[currKeyIndex] < 0 || key[currKeyIndex] > 128) throw new IllegalArgumentException("invalid key");
+			if (key[currKeyIndex] < 0 || key[currKeyIndex] >= 128) throw new IllegalArgumentException("invalid key");
 			int code = (int) message.charAt(i);
 			code = (code + key[currKeyIndex]) % 128; // assumed ascii encoding
 			char outChar = Character.toChars(code)[0];
@@ -140,7 +140,7 @@ public class CaesarCracker {
 	/**
 	 * Decodes message with a given key.
 	 * @param message is the message to be decoded.
-	 * @param key is the key used for decoding, given as an array of integer values (from 0 to 255).
+	 * @param key is the key used for decoding, given as an array of integer values (from 0 to 127).
 	 * @return the message decoded with the provided key.
 	 */
 	public static String decode(String message, int[] key) {
@@ -149,7 +149,7 @@ public class CaesarCracker {
 	
 	/**
 	 * Attempts to decode encrypted message with the given key. Brute force decryption tries to find a key
-	 * of at most this.passwordLength values (each from 0 to 255) such that the decryption of the encrypted
+	 * of at most this.passwordLength values (each from 0 to 127) such that the decryption of the encrypted
 	 * message leads to a decrypted text that contains this.messageWord.
 	 * @return true iff brute force decryption succeeded.
 	 */
