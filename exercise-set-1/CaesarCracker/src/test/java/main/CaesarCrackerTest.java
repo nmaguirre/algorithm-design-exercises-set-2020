@@ -139,7 +139,7 @@ public class CaesarCrackerTest {
 	 */
 	@Test
 	public void testMoreComplexKey() {
-		int[] key = {20,150,101};
+		int[] key = {20,121,101};
 		String output = CaesarCracker.encode("hola que tal como andas", key);
 		String output2 = CaesarCracker.decode(output,key);
 		assertEquals("hola que tal como andas", output2);
@@ -258,7 +258,7 @@ public class CaesarCrackerTest {
 	@Test
 	public void testEvenMoreComplexBruteForce() {
 		CaesarCracker cracker = new CaesarCracker();
-		int[] key = {3,23,151,103};
+		int[] key = {3,23,126,103};
 		cracker.setEncryptedMessage(CaesarCracker.encode("hola que tal como andas", key));
 		cracker.setMessageWord("hola");
 		cracker.setPasswordLength(4);
