@@ -7,7 +7,7 @@ import qualified Data.List
 import Lcs
 
 propLcs :: String -> String -> Bool
-propLcs xs ys =  lcsBf xs ys == lcsDecrease xs ys 
+propLcs xs ys = length (lcsBf xs ys) == length (lcsDecrease xs ys) 
 
 
 main :: IO ()
