@@ -1,0 +1,82 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 90b746b8b778d55fda6bcb176d2123a97050095a2ab2250527e419fceacc39dd
+
+name:           grading
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/grading#readme>
+homepage:       https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-3/grading#readme
+bug-reports:    https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-3/grading/issues
+author:         Sonia Permigiani
+maintainer:     spermigiani@dc.exa.unrc.edu.ar
+copyright:      2020 Sonia Permigiani
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-3/grading
+
+library
+  exposed-modules:
+      Grade
+  other-modules:
+      Paths_grading
+  hs-source-dirs:
+      src
+  build-depends:
+        base >=4.7 && <5
+      , array
+  default-language: Haskell2010
+
+executable grading-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_grading
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , grading
+  default-language: Haskell2010
+
+test-suite grading-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_grading
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , grading
+    , hspec
+  default-language: Haskell2010
+
+benchmark grade-bench
+  type: exitcode-stdio-1.0
+  main-is: GradeBench.hs
+  other-modules:
+      Paths_grading
+  hs-source-dirs:
+      bench
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , grading
+    , hspec
+    , criterion
+    , random
+  default-language: Haskell2010
