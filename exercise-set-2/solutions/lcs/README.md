@@ -1,3 +1,3 @@
-#Complete Lcs with longest common subsequence algorithm
+#  Lcs with longest common subsequence algorithm
 
-Add your decrease and conquer solution in `src/Lcs.hs file`
+Brute Force and decrease and conquer solution added in `src/Lcs.hs file`
