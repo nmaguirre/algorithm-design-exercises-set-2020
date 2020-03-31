@@ -1,1 +1,1 @@
-# Exercises Set 2 Solutions
+# Examples solutions to Exercises Set 2

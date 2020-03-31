@@ -1,0 +1,64 @@
+name:                listSorter
+version:             0.1.0.0
+github:              "nmaguirre/algorithm-design-exercises-set-2020/exercise-set-1/listSorter"
+license:             BSD3
+author:              "Sonia Permigiani"
+maintainer:          "spermigiani@dc.exa.unrc.edu.ar"
+copyright:           "2020 Sonia"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/nmaguirre/algorithm-design-exercises-set-2020/exercise-set-1/listSorter#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  listSorter-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - listSorter
+    - QuickCheck
+
+tests:
+  listSorter-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - listSorter
+    - hspec
+    - QuickCheck
+
+benchmarks: 
+    listSorter-bench:
+        main:                ListSortBench.hs
+        source-dirs:         bench
+        ghc-options:
+        - -threaded
+        - -rtsopts
+        - -with-rtsopts=-N
+        dependencies:
+        - listSorter
+        - hspec
+        - QuickCheck
