@@ -33,7 +33,7 @@ public interface Engine<S extends State,P extends StateProblem<S>> {
    * @pre. performSearch() has been executed and finished successfully.
    * @post. the path to the found success node is returned.  
    */
-    abstract public List<S> getPath();
+  public List<S> getPath();
 
   /** 
   * Reports information regarding a previously executed search.   
