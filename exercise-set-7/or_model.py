@@ -22,7 +22,5 @@ print('MLPRegressor score:', mlp.score(X,Y))
 print('Regression prediction Vs. MLPRegressor prediction')
 for index in range(len(X)):
   print('')
-  print("OR(" + str(X[index]) + ") = " + str(lr.predict([X[index]])).take(0))
-  print("OR(" + str(X[index]) + ") = " + str(mlp.predict([X[index]]).take(0)))
-
-    
+  print("OR(" + str(X[index]) + ") = " + str(lr.predict([X[index]])))
+  print("OR(" + str(X[index]) + ") = " + str(mlp.predict([X[index]])))    
